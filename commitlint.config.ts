@@ -9,6 +9,7 @@ const Config: UserConfig = {
       'always',
       ['feat', 'chore', 'docs', 'fix', 'build', 'refactor'],
     ],
+    'body-max-line-length': [RuleConfigSeverity.Error, 'always', 200],
   },
 };
 
