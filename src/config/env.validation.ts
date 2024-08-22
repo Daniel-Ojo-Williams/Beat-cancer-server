@@ -37,6 +37,10 @@ class EnvVariables {
   @IsString()
   @IsNotEmpty()
   JWT_SECRET: string;
+
+  @IsString()
+  @IsNotEmpty()
+  JWT_REFRESH: string;
 }
 
 // --| The nestjs/config module injects the env variables into this function
