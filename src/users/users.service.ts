@@ -16,10 +16,13 @@ export class UsersService {
     await this.users.createQueryBuilder().insert().values(user).execute();
   }
 
-  async findUserByEmail(email: string) {
-    return await this.users
-      .createQueryBuilder()
-      .where('email = :email', { email })
-      .getOne();
+  async findUserByEmail(email: string, password?: boolean) {
+    const res = this.users
+      .createQueryBuilder('u')
+      .where('u.email = :email', { email });
+
+    if (password) res.addSelect('u.password');
+
+    return res.getOne();
   }
 }
