@@ -29,5 +29,6 @@ const JWT_PROVIDER = (
     JWT_PROVIDER('JWT_REFRESH', 'JWT_REFRESH', '7d'),
     AuthService,
   ],
+  exports: [JWT_PROVIDER('JWT_ACCESS', 'JWT_SECRET', '5h')],
 })
 export class AuthModule {}
